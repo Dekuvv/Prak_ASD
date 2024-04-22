@@ -7,8 +7,9 @@ public class GedungMain {
         int jumlahGedung = sc.nextInt();
         sc.nextLine();
         Gedung gedung [] = new Gedung[jumlahGedung];
-
-        for (int i = 0; i < jumlahGedung; i++){
+        Gedung gedung1 = new Gedung();
+        
+        for (int i = 0; i < gedung.length; i++){
             gedung [i] = new Gedung();
             System.out.print("Masukkan nama gedung: ");
             gedung [i].namaGedung = sc.nextLine();
@@ -18,6 +19,7 @@ public class GedungMain {
             gedung[i].harga = sc.nextInt();
             sc.nextLine();
         }
+        
         for (int i = 0; i < jumlahGedung ; i++){
             gedung[i].DisplayInfo();
         }
