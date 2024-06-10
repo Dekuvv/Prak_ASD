@@ -10,12 +10,21 @@ public class Graph {
     }
 
     public void addEdge (int i, int j, int weight){
-        adjMatrix[i][j] = weight;
-        adjMatrix[j][i] = weight;
+        if (i >= 0 && i < numVertices && j >= 0 && j < numVertices) {
+            adjMatrix[i][j] = weight;
+            adjMatrix[j][i] = weight;
+        }else{
+            System.out.println("Error: Indeks tidak valid untuk sisi(" + i + ", " + j + ")");
+        }
     }
 
     public void removeEdge (int i, int j){
-        adjMatrix[i][j] = 0;
+        if (i >= 0 && i < numVertices && j >= 0 && j < numVertices) {
+            adjMatrix[i][j] = 0;
+            adjMatrix[j][i] = 0;
+        }else{
+            System.out.println("Error: Indeks tidak valid untuk sisi(" + i + ", " + j + ")");
+        }
     }
 
     public void print(){
@@ -46,7 +55,7 @@ public class Graph {
                 }
             }
 
-            System.out.println("Derajat vertex " + vertex + ": " + degree);
+            System.out.println("Jumlah vertex " + vertex + ": " + degree);
         }
     }
 }
