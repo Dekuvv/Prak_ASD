@@ -14,18 +14,24 @@ public class StackDemo {
         books.push(book3);
 
         Book temp = books.peek();
-        if (temp != null) {
+        System.out.print("Peek: ");
+        if (temp != null){
             System.out.println(temp.toString());
         }
 
         Book temp2 = books.pop();
-        if (temp2 != null) {
+        System.out.print("Pop: ");
+        if (temp2 != null){
             System.out.println(temp2.toString());
         }
 
+        System.out.println("Stack: ");
         for (Book book : books){
             System.out.println(book.toString());
         }
+
         System.out.println(books);
+
+        System.out.println(books.search(book2));
     }
 }
